@@ -70,7 +70,7 @@ for proteinObjectIndex in range(len(proteinObjects)):
         currentResidue = [];
 
 def dot(v1, v2):
-    return v1.x * v2.x + v1.y * v2.y + v1.z + v2.z;
+    return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
 
 def cross(v1, v2):
     return vector(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.x);
@@ -88,8 +88,7 @@ def dihedral(atom1, atom2, atom3, atom4):
 
     num1 = dot(n1, n2);
     denom1 = n1.length * n2.length;
-    #angle = math.acos(num1/denom1) * 180 / math.pi;
-    angle = (num1/denom1) * 180 / math.pi;
+    angle = math.acos(num1/denom1) * 180 / math.pi;
 
     n3 = cross(n1, n2);
 
